@@ -1,0 +1,11 @@
+1.Big O notation
+2.Data Structure: Linked Lists
+3:Data Structure: Stack & Queues
+4:Data Structure: Trees 
+5:Data Structure: Hash Map/Hash Table
+6:Data Structure: Graphs
+7:Algorithm : Recursion
+8:Algorithm : Basic Sort
+9:Algorithm : Merge Sort
+10:Algorithm : Quick Sort
+11.Algorithm : Tree Traversal (BFS,DFS)
