@@ -32,3 +32,5 @@ func (m *MySlice) linearSearch() bool {
 	}
 	return false
 }
+
+
