@@ -5,8 +5,8 @@ class Node:
         self.next = None
 
 class LinkedList:
-    def __init__(self,val=None):
-        newNode = Node(val)
+    def __init__(self,value):
+        newNode = Node(value)
         self.head = newNode
         self.tail = newNode
         self.length = 1
@@ -64,14 +64,26 @@ class LinkedList:
             self.head = None
             self.tail = None
             return None
-        return temp.data
+        return temp
+    
+    # Get Node 
+    def get(self,index):
+        if index < 0 or index >= self.length:
+            return "index is greater or less than LL"
+        temp_head = self.head
+        for _ in range(index):
+            temp_head = temp_head.next
+        return temp_head
 
+    # Set value
+    def set_value(self,index,value):
+        temp = self.get(index)
+        if temp:
+            temp.data = value
+            return True
 
+        return False
 
-
-
-
-           
 
     def show_list(self):
         temp_var = self.head
@@ -81,22 +93,31 @@ class LinkedList:
 
 
 
-linkeList = LinkedList()
-
+linkeList = LinkedList(44)
 linkeList.apppend(10)
 linkeList.apppend(20)
 linkeList.apppend(30)
 linkeList.apppend(40)
-linkeList.prepend(100)
+linkeList.apppend(100)
+
+# print(linkeList.length)
+linkeList.set_value(2,1000)
+# a = linkeList.get(2)
+# print(a.data)
+linkeList.set_value(4,500)
+
+# linkeList.show_list()
+# print(linkeList.get(2).data)
 # print(linkeList.pop())
 # print(linkeList.pop())
 # print(linkeList.pop())
 # print(linkeList.pop())
 # print(linkeList.pop())
-linkeList.pop_first()
-linkeList.pop_first()
-linkeList.pop_first()
-linkeList.pop_first()
-linkeList.pop_first()
-linkeList.pop_first()
+# linkeList.pop_first()
+# linkeList.pop_first()
+# linkeList.pop_first()
+# linkeList.pop_first()
+# linkeList.pop_first()
+# linkeList.pop_first()
 linkeList.show_list()
+
