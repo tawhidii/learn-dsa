@@ -1,4 +1,3 @@
-
 class Node:
     def __init__(self,data):
         self.data = data
@@ -10,7 +9,7 @@ class LinkedList:
         self.head = newNode
         self.tail = newNode
         self.length = 1
-
+    # append a node at last 
     def apppend(self,value):
         newNode = Node(value)
         if self.length == 0 or self.head.data is None:
@@ -21,6 +20,7 @@ class LinkedList:
             self.tail = newNode
         self.length += 1
     
+    # prepend a node at first
     def prepend(self,value):
         new_node = Node(value)
         if self.length == 0:
@@ -32,6 +32,7 @@ class LinkedList:
         self.length += 1
         return True 
     
+    # pop node from LL at first
     def pop_first(self):
         if self.length == 0:
             return None
@@ -46,7 +47,7 @@ class LinkedList:
             self.tail= None
 
         return temp
-    
+    #pop node from LL at last
     def pop(self):
         if self.length == 0:
             return None
@@ -66,7 +67,7 @@ class LinkedList:
             return None
         return temp
     
-    # Get Node 
+    # Get Node at specfic index
     def get(self,index):
         if index < 0 or index >= self.length:
             return "index is greater or less than LL"
@@ -75,16 +76,15 @@ class LinkedList:
             temp_head = temp_head.next
         return temp_head
 
-    # Set value
+    # Set value at specific node
     def set_value(self,index,value):
         temp = self.get(index)
         if temp:
             temp.data = value
             return True
-
         return False
 
-
+    # show all nodes
     def show_list(self):
         temp_var = self.head
         while temp_var is not None:
