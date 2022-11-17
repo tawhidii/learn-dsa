@@ -84,6 +84,28 @@ class LinkedList:
             return True
         return False
 
+    # inserting a node in specific index 
+    def insert(self,index,value):
+        if index < 0 or index > self.length:
+            return False
+        if index == 0:
+            self.prepend(value)
+        if index == self.length:
+            self.apppend(value)
+
+        new_node = Node(value)
+        temp = self.get(index-1)
+        new_node.next = temp.next
+        temp.next = new_node
+        self.length +=1
+
+    # remove a node in specific index 
+    def remove(self,index):
+        pass
+
+
+
+
     # show all nodes
     def show_list(self):
         temp_var = self.head
@@ -101,10 +123,11 @@ linkeList.apppend(40)
 linkeList.apppend(100)
 
 # print(linkeList.length)
-linkeList.set_value(2,1000)
+# linkeList.set_value(2,1000)
 # a = linkeList.get(2)
 # print(a.data)
-linkeList.set_value(4,500)
+# linkeList.set_value(4,500)
+linkeList.insert(2,1000)
 
 # linkeList.show_list()
 # print(linkeList.get(2).data)
@@ -120,4 +143,3 @@ linkeList.set_value(4,500)
 # linkeList.pop_first()
 # linkeList.pop_first()
 linkeList.show_list()
-
